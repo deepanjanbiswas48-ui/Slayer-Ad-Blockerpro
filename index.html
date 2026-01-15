@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Beast Ad-Void</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    body { background:#000; color:#ff0000; font-family:Segoe UI,sans-serif; margin:0; padding:20px; text-align:center; }
+    .header { font-size:35px; font-weight:900; letter-spacing:3px; margin-bottom:10px; text-shadow:0 0 10px #500; }
+    .stats-box { background:#0a0a0a; border:1px solid #300; padding:10px; border-radius:8px; margin-bottom:20px; }
+    .beast-eye-container { width:230px; height:230px; margin:auto; border-radius:50%; border:5px solid #400; box-shadow:0 0 50px #f00; overflow:hidden; }
+    .eye-img { width:100%; height:100%; object-fit:cover; animation:pulse 1.8s infinite; }
+    @keyframes pulse { 0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)} }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:30px; }
+    .card { background:#111; padding:15px; border-radius:15px; text-align:left; }
+    .btn-unleash { background:linear-gradient(135deg,#600,#f00); color:#fff; width:100%; padding:20px; border:none; border-radius:50px; font-size:20px; margin-top:35px; }
+  </style>
+</head>
+<body>
+
+<div class="header">THE BEAST</div>
+<div class="stats-box">💀 TOTAL ADS KILLED: 1346</div>
+
+<div class="beast-eye-container">
+  <img src="icon.png" class="eye-img">
+</div>
+
+<div class="grid">
+  <div class="card">Deep Purge</div>
+  <div class="card">Ghost Mode</div>
+  <div class="card">Death Log</div>
+  <div class="card">Shield</div>
+</div>
+
+<button class="btn-unleash">UNLEASH THE BEAST</button>
+
+</body>
+</html>
