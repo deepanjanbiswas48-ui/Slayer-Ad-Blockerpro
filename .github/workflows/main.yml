@@ -1,3 +1,4 @@
+.name: Build Beast APK
 name: Build Beast APK
 
 on:
@@ -9,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Build APK using PWABuilder
-        uses: pwabuilder/pwabuilder-action@v1
+      - name: Build APK with PWABuilder
+        uses: pwabuilder/pwabuilder-github-action@v1
         with:
           manifestPath: manifest.json
-          outputPath: ./output
           platform: android
+          outputPath: output
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
