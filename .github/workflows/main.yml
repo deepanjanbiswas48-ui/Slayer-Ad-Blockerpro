@@ -1,0 +1,30 @@
+name: Build Beast APK
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Bubblewrap
+        run: npm install -g @bubblewrap/cli
+
+      - name: Build APK
+        run: |
+          bubblewrap init --manifest ./manifest.json --no-prompt
+          bubblewrap build
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: Beast-APK
+          path: app-release.apk
