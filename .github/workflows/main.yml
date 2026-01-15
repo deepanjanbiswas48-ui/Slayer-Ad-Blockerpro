@@ -9,24 +9,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Build APK using PWABuilder
+        uses: pwabuilder/pwabuilder-action@v1
         with:
-          node-version: 18
-
-      - name: Install Bubblewrap
-        run: npm install -g @bubblewrap/cli
-
-      - name: Build APK
-        run: |
-          bubblewrap init --manifest ./manifest.json --no-prompt
-          bubblewrap build
+          manifestPath: manifest.json
+          outputPath: ./output
+          platform: android
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Beast-APK
-          path: app-release.apk
+          path: output/**/*.apk
